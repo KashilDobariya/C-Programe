@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<conio.h>
+union acc
+{
+	int accno;
+	char name[20];
+	int bal;
+};
+void main()
+{
+	union acc a[3];
+	int i;
+	clrscr();
+	for(i=0; i<3; i++)
+	{
+		a[i].accno=i+1;
+		printf("Enter the details of account %d\n",a[i].accno);
+		printf("Enter the name : ");
+		scanf("%s",a[i].name);
+		printf("Enter the Balance :");
+		scanf("%d",&a[i].bal);
+	}
+	printf("The account details aer\n");
+	printf("\nNO\tName\t\tBalance\n");
+	for(i=0; i<3; i++)
+	{
+		printf("%d\t%s\t\t%d\n",i+1,a[i].name,a[i].bal);
+	}
+	getch();
+}
